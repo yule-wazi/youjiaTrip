@@ -9,19 +9,19 @@ const router = createRouter({
     },
     {
       path: '/home',
-      component: () => import('@/components/home/home.vue')
+      component: () => import('@/views/home/home.vue')
     },
     {
       path: '/favor',
-      component: () => import('@/components/favor/favor.vue')
+      component: () => import('@/views/favor/favor.vue')
     },
     {
       path: '/order',
-      component: () => import('@/components/order/order.vue')
+      component: () => import('@/views/order/order.vue')
     },
     {
       path: '/message',
-      component: () => import('@/components/message/message.vue')
+      component: () => import('@/views/message/message.vue')
     },
     {
       path: '/localPosition',
