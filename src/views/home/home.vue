@@ -1,25 +1,33 @@
 <template>
   <div class="home">
     <home-nav/>
-    <search-pos :suggestList="suggestData"/>
+    <search-pos/>
+    <categories/>
+    <hot-list/>
+    <button @click="btnClick">下拉一下</button>
+    <hr><hr><hr><hr><hr><hr>
   </div>
 </template>
 
 <script setup>
-import MyRequest from '@/services/request'
 import HomeNav from './cpns/home-nav-bar.vue'
 import SearchPos from './cpns/home-search-position.vue'
-import { ref } from 'vue';
+import Categories from './cpns/home-categories.vue'
+import HotList from './cpns/home-hotList.vue'
+import useHome from '@/stores/modules/home';
+
+//调用store中的homeStore发送请求
+  const homeStore = useHome()
+  homeStore.fetchHotSuggests()
+  homeStore.fetchCategories()
+  homeStore.fetchHouseList()
 
 
-  // 请求热门建议
-  const suggestData = ref([])
-  MyRequest.get({
-    url: "/home/hotSuggests"
-  }).then(res => {
-    console.log(res.data)
-    suggestData.value = res.data
-  })
+
+  // 点击按钮刷新数据
+  function btnClick() {
+    homeStore.fetchHouseList()
+  }
 </script>
 
 <style scoped>

@@ -38,19 +38,28 @@
     <div class="keywords bottom-gray-line">关键字/位置/民宿名</div>
     <!-- 热门建议 -->
      <div class="hotSuggest">
-      <template v-for="(item, index) in suggestList" :key="index">
+      <template v-for="(item, index) in hotSuggests" :key="index">
         <div class="item">
           {{ item.tagText.text }}
         </div>
       </template>
      </div>
+     <!-- 开始搜索 -->
+      <div class="search">
+        <span class="content" @click="search">
+          开始搜索
+        </span>
+      </div>
+      
   </div>
 </template>
 
 <script setup>
 import router from '@/router';
 import useCity from '@/stores/modules/city';
+import useHome from '@/stores/modules/home';
 import { getDiffDays, getMonthDate } from '@/utils/getMonthDate';
+import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
   // 获取位置
   function posClick() {
@@ -68,7 +77,7 @@ import { ref } from 'vue';
 
   // 回显城市名称
   const cityStore = useCity()
-  const {currentCity} = cityStore
+  const {currentCity} = storeToRefs(cityStore)
 
   // 计算日期
   const start = new Date()
@@ -101,14 +110,21 @@ import { ref } from 'vue';
     if(date === today.day && month === today.month)day.text = '今天'
     return day;
   };
-  // 获取推荐数据
-  defineProps({
-    suggestList: {
-      type: Array,
-      default: () => []
-    }
-  })
+  // 获取homeStore中的数据
+  const homeStore = useHome()
+  const { hotSuggests } = storeToRefs(homeStore)
 
+  //跳转搜索界面
+  function search() {
+    router.push({
+      path: '/search',
+      query: {
+        startDate: startDate.value,
+        endDate: endDate.value,
+        currentCity: currentCity.value.cityName
+      }
+    })
+  }
 </script>
 
 <style scoped>
@@ -199,5 +215,20 @@ import { ref } from 'vue';
       }
     }
 
+    .search {
+      margin-top: 5px;
+      display: flex;
+      padding: 0 20px; 
+      height: 44px;
+      .content {
+        flex: 1;
+        background-image: var(--theme-gradient);
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        line-height: 44px;
+        border-radius: 22px;
+      }
+    }
   }
 </style>
