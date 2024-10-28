@@ -33,13 +33,14 @@ import { computed } from 'vue';
   .houseType9 {
     position: relative;
     height: 223px;
+    border-radius: 6px;
+    overflow: hidden;
     width: calc(50% - 8px);
     margin: 0 8px 8px 0;
     color: #fff;
     .bg {
       img {
-        width: 100%;
-        border-radius: 6px;
+        height: 223px;
 
       }
     }
@@ -48,6 +49,7 @@ import { computed } from 'vue';
       position: absolute;
       padding: 0 10px;
       bottom: 0;
+      background-image: linear-gradient(179deg, rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, .64));;
 
       .summaryText {
         font-size: 10px;

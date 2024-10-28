@@ -46,7 +46,6 @@ const props = defineProps({
       position: absolute;
       padding: 0 10px;
       bottom: 0;
-
       .location {
         display: flex;
         img {

@@ -29,6 +29,7 @@ import HouseType3 from '@/components/houseType-t3/houseType-t3.vue'
       font-size: 18px;
       color:#333;
       font-weight: 700;
+      margin-bottom: 20px;
     }
 
     .house {
