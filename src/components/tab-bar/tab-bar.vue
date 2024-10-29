@@ -1,7 +1,7 @@
 <template>
   <div class="tab-bar">
-    <!-- 调用vant组件库 -->
-    <van-tabbar v-model="currentindex" active-color='#FF9F46'>
+    <!-- 调用vant组件库，底部选项 -->
+    <van-tabbar v-model="currentindex" active-color='#FF9F46' route>
       <template v-for="(item, index) in data" :key="index">
         <van-tabbar-item :to="item.path">
           <span>{{ item.context }}</span>

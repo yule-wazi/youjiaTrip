@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
-export function getMonthDate(date) {
-  return dayjs(date).format("MM月DD日")
+export function getMonthDate(date, fromatStr = "MM月DD日") {
+  return dayjs(date).format(fromatStr)
 }
 
 export function getDiffDays(startDay, endDay) {

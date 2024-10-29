@@ -58,9 +58,10 @@
 import router from '@/router';
 import useCity from '@/stores/modules/city';
 import useHome from '@/stores/modules/home';
+import useMainStore from '@/stores/modules/main';
 import { getDiffDays, getMonthDate } from '@/utils/getMonthDate';
 import { storeToRefs } from 'pinia';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
   // 获取位置
   function posClick() {
     navigator.geolocation.getCurrentPosition(res => {
@@ -80,17 +81,19 @@ import { ref } from 'vue';
   const {currentCity} = storeToRefs(cityStore)
 
   // 计算日期
-  const start = new Date()
-  const end = new Date()
-  const startDate = ref(getMonthDate(start))
-  const endDate = ref(getMonthDate(end.setDate(end.getDate()+ 1)))
+  const mainStore = useMainStore()
+  const {start, end} = storeToRefs(mainStore)
+  const startDate = computed(() => getMonthDate(start.value))
+  const endDate = computed(() => getMonthDate(end.value))
+  const DiffDays = ref(getDiffDays(start.value, end.value))
+
+  // 展示日历组件
   const showDate = ref(false)
-  const DiffDays = ref(getDiffDays(start, end))
 
   // 日期“确定”Event
   function onConfirm(date) {
-    startDate.value = getMonthDate(date[0])
-    endDate.value = getMonthDate(date[1])
+    start.value = date[0]
+    end.value = date[1]
     DiffDays.value = getDiffDays(date[0], date[1])
     showDate.value = false
   }
