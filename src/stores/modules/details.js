@@ -4,13 +4,14 @@ import { defineStore } from "pinia";
 const useDetails = defineStore("details", {
   state: () => ({
     detailInfos: {},
+    mainPart: {},
     houseId: ""
   }),
   actions: {
     async fetchDetailInfos() {
       const res = await getDetailInfos(this.houseId)
       this.detailInfos = res.data
-      console.log(res.data)
+      this.mainPart = res.data.mainPart
     }
   }
 })

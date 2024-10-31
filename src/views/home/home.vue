@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import {computed, ref, watch} from 'vue'
+import {computed, watch} from 'vue'
 import HomeNav from './cpns/home-nav-bar.vue'
 import SearchPos from './cpns/home-search-position.vue'
 import Categories from './cpns/home-categories.vue'
@@ -25,6 +25,8 @@ import useScroll from '@/hooks/useScroll';
   homeStore.fetchHotSuggests()
   homeStore.fetchCategories()
   homeStore.fetchHouseList()
+
+  
 
 
   const {isReachBottom, scrollTop} = useScroll()

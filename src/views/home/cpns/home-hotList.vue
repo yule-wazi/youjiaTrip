@@ -31,7 +31,6 @@ import router from '@/router';
 
   // 跳转详情页
   function checkDetails(item) {
-    console.log(item.houseId)
     router.push("/details/"+ item.houseId)
   }
 </script>
