@@ -20,7 +20,7 @@
       default: []
     }
   })
-  console.log(props.swipe)
+
   // 拿取swipe中所有title
   const titles = props.swipe.map((data) => data.title.replace('：',''))
 
