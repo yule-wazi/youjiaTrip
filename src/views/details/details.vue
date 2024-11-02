@@ -33,6 +33,9 @@
   </div>
 </template>
 
+<script>
+export default {name:"detail"}
+</script>
 <script setup>
 import router from '@/router';
 import { useRoute } from 'vue-router';
@@ -44,7 +47,7 @@ import facility from './cpns/03_facility.vue'
 import comment from './cpns/04_comment.vue'
 import priceDescription from './cpns/05_priceDescription.vue'
 import useScroll from '@/hooks/useScroll';
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 // 离开详情页
   function onClickLeft() {
     // 初始化详情页数据
@@ -65,7 +68,7 @@ import { computed, ref } from 'vue';
   detailsStore.fetchDetailInfos()
 
 // 监听滚动位置
-  const {scrollTop} = useScroll()
+  const {scrollTop} = useScroll(false)
   const isShowTab = computed(() => {
     return scrollTop.value >= 300
   })
@@ -74,14 +77,27 @@ import { computed, ref } from 'vue';
   const detailRef = ref()
   const active = ref(0)
   function onClickTab() {
-    sectionEls[active.value].scrollIntoView({ behavior: 'smooth' ,block: 'center'});
+    sectionEls[active.value].scrollIntoView({ behavior: 'smooth' ,block: 'start'});
+    setTimeout(() => {
+      flag.value = 0
+    },500)
+    flag.value = 1
   }
   // 将元素存入数组以备查找所在Y轴高度
   let sectionEls = []
   function getSectionRef(value) {
     if(value) sectionEls.push(value.$el)
   }
-
+  // 根据滚动定位tab的active
+  const flag = ref(0)//定义标志来判断是否监听滚动
+  watch(scrollTop, (newValue) => {
+    if(flag.value) return
+    let index
+    for(index = 0 ; index < sectionEls.length; index++) {
+      if(newValue < sectionEls[index].offsetTop - 44) break;
+    }
+    active.value = index - 1
+  })
   
   
 </script>

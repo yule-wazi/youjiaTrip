@@ -32,10 +32,13 @@ const props = defineProps({
     position: relative;
     height: 223px;
     width: calc(50% - 8px);
-    margin: 0 8px 8px 0;
+    margin-bottom: 10px;
+
     color: #333333;
     .bg {
+      height: 112px;
       img {
+        height: 112px;
         width: 100%;
         border-radius: 6px;
 

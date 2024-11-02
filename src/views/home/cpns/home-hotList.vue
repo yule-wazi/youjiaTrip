@@ -48,6 +48,7 @@ import router from '@/router';
 
     .house {
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
       width: 100%;
       box-sizing: border-box;

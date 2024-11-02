@@ -29,9 +29,12 @@
 <style lang="less" scoped>
   .swipe {
     .my-swipe {
+    height: 250px;
       .item {
         img {
           width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
     }

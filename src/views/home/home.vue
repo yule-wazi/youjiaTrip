@@ -10,6 +10,9 @@
   </div>
 </template>
 
+<script>
+export default {name:"home"}
+</script>
 <script setup>
 import {computed, watch} from 'vue'
 import HomeNav from './cpns/home-nav-bar.vue'
@@ -26,9 +29,6 @@ import useScroll from '@/hooks/useScroll';
   homeStore.fetchCategories()
   homeStore.fetchHouseList()
 
-  
-
-
   const {isReachBottom, scrollTop} = useScroll()
   // 监听滚动高度&请求后续数据
   watch(isReachBottom, (newValue) => {
@@ -38,7 +38,6 @@ import useScroll from '@/hooks/useScroll';
       })
     }
   })
-
 
   // 展示搜索栏
   // 定义的可响应式数据依赖另一个可响应数据时，用computed计算属性

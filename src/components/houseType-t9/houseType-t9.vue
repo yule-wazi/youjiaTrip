@@ -36,12 +36,12 @@ import { computed } from 'vue';
     border-radius: 6px;
     overflow: hidden;
     width: calc(50% - 8px);
-    margin: 0 8px 8px 0;
+    margin-bottom: 10px;
     color: #fff;
     .bg {
       img {
         height: 223px;
-
+        width: 100%;
       }
     }
 
