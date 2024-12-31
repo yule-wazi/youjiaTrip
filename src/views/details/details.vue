@@ -1,11 +1,6 @@
 <template>
   <div class="Details" ref="detailRef">
-    <van-nav-bar
-      title="房屋详情"
-      left-text="旅途"
-      left-arrow
-      @click-left="onClickLeft"
-    />
+    <nav-bar/>
     <div class="tab" >
       <van-tabs  v-model:active="active" v-if="isShowTab" @click-tab="onClickTab()">
         <template v-for="(item, index) in ['概览', '设施', '评论']">
@@ -48,14 +43,7 @@ import comment from './cpns/04_comment.vue'
 import priceDescription from './cpns/05_priceDescription.vue'
 import useScroll from '@/hooks/useScroll';
 import { computed, ref, watch } from 'vue';
-// 离开详情页
-  function onClickLeft() {
-    // 初始化详情页数据
-    const detailsStore = useDetails()
-    detailsStore.mainPart = {}
-
-    router.back()
-  }
+import navBar from '@/components/nav-var/nav-bar.vue';
   
   const detailsStore = useDetails()
   const {mainPart, houseId} = storeToRefs(detailsStore)
