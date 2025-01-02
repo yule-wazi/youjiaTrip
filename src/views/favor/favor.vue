@@ -19,15 +19,14 @@
       </nav-bar>
     </div>
     <collection-item/>
-    <div class="footer">
-      <div class="text">没有更多数据了</div>
-    </div>
+    <footer-text/>
 
   </div>
 </template>
 
 <script setup>
 import navBar from '@/components/nav-var/nav-bar.vue';
+import footerText from '@/components/footer-text/footer-text.vue';
 import collectionItem from './cpns/collection-item.vue';
 import useCollection from '@/stores/modules/collection';
 import { storeToRefs } from 'pinia';
@@ -89,16 +88,6 @@ watch(currentIndex, () => {
       .right {
         font-size: 25px;
         color: #fff;
-      }
-    }
-    .footer {
-      width: 100%;
-      height: 150px;
-      margin-top: 25px;
-      .text {
-        font-size: 13px;
-        color: #999;
-        text-align: center;
       }
     }
   }
