@@ -7,21 +7,28 @@
       <slot name="center">有家旅途</slot>
     </div>
     <div class="right">
-      <slot name="right"></slot>
+      <slot name="right">
+        <nav-menu :show="isShow"/>
+      </slot>
     </div>
   </div>
 </template>
 
 <script setup>
+import navMenu from '../nav-menu/nav-menu.vue';
 import useDetails from '@/stores/modules/details';
 import router from '@/router';
-  function onClickLeft() {
-    // 初始化详情页数据
-    const detailsStore = useDetails()
-    detailsStore.mainPart = {}
+import { ref } from 'vue';
 
-    router.back()
-  }
+const isShow = ref(false)
+
+function onClickLeft() {
+  // 初始化详情页数据
+  const detailsStore = useDetails()
+  detailsStore.mainPart = {}
+
+  router.back()
+}
 </script>
 
 <style scoped>

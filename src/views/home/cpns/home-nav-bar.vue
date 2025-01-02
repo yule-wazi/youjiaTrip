@@ -1,7 +1,14 @@
 <template>
   <div class="home-nav">
-    <div class="nav-bar">
-      <div class="title">友家旅途</div>
+    <div class="nav-var">
+      <nav-bar>
+        <template #left>
+          <span></span>
+        </template>
+        <template #center>
+          <div class="title">友家旅途</div>
+        </template>
+      </nav-bar>
     </div>
     <div class="banner">
         <img src="@/assets/img/home-nav.jpg" alt="">
@@ -11,7 +18,7 @@
 </template>
 
 <script setup>
-  
+  import navBar from '@/components/nav-var/nav-bar.vue';
 </script>
 
 <style scoped>

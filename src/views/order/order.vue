@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-  
+import navMenu from '@/components/nav-menu/nav-menu.vue';
 </script>
 
 <style scoped>
