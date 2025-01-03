@@ -92,6 +92,7 @@ import navBar from '@/components/nav-var/nav-bar.vue';
 
 <style scoped>
   .Details {
+    background-color: var(--bg-color);
     .tab {
       position: fixed;
       top: 0;
@@ -101,7 +102,7 @@ import navBar from '@/components/nav-var/nav-bar.vue';
     }
     .footer {
       height: 250px;
-      background-color: #F1F3F5;
+      background-color: var(--bg-color);
       padding: 1px;
       text-align: center;
       .ensure {

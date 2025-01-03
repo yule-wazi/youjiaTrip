@@ -57,7 +57,7 @@ import useScroll from '@/hooks/useScroll';
       height: 45px;
       padding: 16px 16px 10px;
       z-index: 9;
-      background-color: #fff;
+      background-color: var(--bg-color);
     }
   }
 </style>

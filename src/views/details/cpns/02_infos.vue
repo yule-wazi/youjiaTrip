@@ -49,7 +49,7 @@
     .houseName {
       font-weight: 600;
       font-size: 20px;
-      color:#333;
+      color: var(--text-color);
       line-height: 24px;
       text-align: justify;
       margin-bottom: 10px;
@@ -68,7 +68,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #F5F7FB;
+      background-color: var(--item-color);
       border-radius: 5px;
       height: 30px;
       margin: 10px 0;
@@ -103,7 +103,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #F5F7FB;
+      background-color: var(--item-color);
       border-radius: 5px;
       height: 30px;
       margin: 10px 0;

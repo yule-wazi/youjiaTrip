@@ -27,6 +27,8 @@
     --van-tabbar-item-icon-size: 23px;
     :deep(.van-tabbar-item) {
       font-size: 14px;
+      background-color: var(--item-color);
+      color: var(--text-color)
     }
   }
 

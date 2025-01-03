@@ -45,7 +45,7 @@ import { computed } from 'vue';
   .facility {
     .content {
       margin: 10px 0;
-      background-color: #F7F9FB;
+      background-color: var(--item-color);
       padding: 10px 0px;
       border-radius: 5px;
       .item {

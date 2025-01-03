@@ -1,14 +1,22 @@
+@import './dark-mode.css';
 :root {
   --primary-color: #FF9F46;
-  --border-color: #F8F9F9;
+  --border-color: #e3e3e3af;
+  --bg-color: #fff;
+  --text-color: #333;
+  --item-color: #F1F3F5;
   --theme-gradient: linear-gradient(90deg,#fa8c1d,#fcaf3f);
 /* 全局修改搜索图标 */
   --van-search-left-icon-color:var(--primary-color) !important;
   --van-primary-color:var(--primary-color);
+  
 }
 
 body {
   font-size: 14px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
 }
 
 .bottom-gray-line {

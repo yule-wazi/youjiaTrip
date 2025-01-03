@@ -162,7 +162,7 @@ import { computed, ref } from 'vue';
         flex: 1;
         text-align: center;
         line-height: 44px;
-        color: #666666;
+        color: var(--text-color);
       }
       .end {
         width: 100px;
@@ -170,7 +170,7 @@ import { computed, ref } from 'vue';
 
       span {
         font-size: 10px;
-        color: #999999;
+        color: var(--text-color);
       }
       .time {
         font-size: 15px;
@@ -214,7 +214,7 @@ import { computed, ref } from 'vue';
         margin-right: 4px;
         margin-bottom: 4px;
         border-radius: 14px;
-        background-color: #F1F3F5;
+        background-color: var(--item-color);
       }
     }
 

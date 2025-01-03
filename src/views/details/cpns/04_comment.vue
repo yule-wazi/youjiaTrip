@@ -94,7 +94,7 @@
       flex-wrap: wrap;
       .item {
         padding: 4px;
-        background-color: #F5F7FB;
+        background-color: var(--item-color);
         margin: 5px;
         font-size: 12px;
         border-radius: 3px;
@@ -102,7 +102,7 @@
     }
     .user {
       margin: 10px 0;
-      background-color: #F7F9FB;
+      background-color: var(--item-color);
       padding: 10px;
       border-radius: 5px;
       .userInfo {

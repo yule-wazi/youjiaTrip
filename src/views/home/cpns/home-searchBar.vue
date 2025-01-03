@@ -37,10 +37,11 @@ import { computed } from 'vue';
       flex-wrap: wrap;
       flex-direction: column;
       justify-content: center;
-      background-color: #f2f4f6;
+      background-color: var(--item-color);
+
       font-size: 10px;
       padding-left: 10px;
-      color: #333;
+      color: var(--text-color);
       border-radius: 6px 0px 0px 6px;
       .start, .end {
         display: flex;
@@ -51,7 +52,6 @@ import { computed } from 'vue';
         }
         .text {
           color: #999;
-
         }
       }
       .start {
@@ -59,7 +59,7 @@ import { computed } from 'vue';
       }
     }
     .right {
-      background-color: #f2f4f6;
+      background-color: var(--item-color);
       padding: 0 10px;
       margin-left: 1px;
       flex: 1;

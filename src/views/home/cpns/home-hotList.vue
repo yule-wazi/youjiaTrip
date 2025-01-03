@@ -41,7 +41,7 @@ import router from '@/router';
     margin-top: 25px;
     .title {
       font-size: 18px;
-      color:#333;
+      color: var(--text-color);
       font-weight: 700;
       margin-bottom: 20px;
     }

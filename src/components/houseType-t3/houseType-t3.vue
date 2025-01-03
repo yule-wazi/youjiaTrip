@@ -33,8 +33,7 @@ const props = defineProps({
     height: 223px;
     width: calc(50% - 8px);
     margin-bottom: 10px;
-
-    color: #333333;
+    color: var(--text-color);
     .bg {
       height: 112px;
       img {
@@ -66,7 +65,7 @@ const props = defineProps({
         font-size: 10px;
         line-height: 10px;
         margin-bottom: 8px;
-        color:#666;
+        color:#777;
       }
 
       .descr {

@@ -14,6 +14,10 @@
               </li>
             </template>
           </ul>
+          <div class="darkBtn">
+            <div class="text">深色模式</div>
+            <van-switch v-model="checked" />
+          </div>
         </div>
       </div>
     </transition>
@@ -21,7 +25,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { defineProps } from 'vue';
 import data from '@/assets/data/tab-bar-data';
 import { useRouter } from 'vue-router';
@@ -44,6 +48,16 @@ const routerTo = (item) => {
     route.push(item.path)
   },300)
 }
+// 深色模式
+const checked = ref(false)
+// 监听模式转换
+watch(checked, () => {
+  if(checked.value) {
+    document.body.classList.add("dark-mode")
+  } else {
+    document.body.classList.remove("dark-mode")
+  }
+})
 </script>
 
 <style lang="less" scoped>
@@ -68,9 +82,9 @@ const routerTo = (item) => {
       z-index: 100;
       height: 100%;
       width: 60%;
-      color: #333;
+      color: var(--text-color);
       padding-top: 35px;
-      background-color: #fff;
+      background-color: var(--bg-color);
       .exit {
         position: absolute;
         right: 20px;
@@ -103,9 +117,18 @@ const routerTo = (item) => {
           .icon {
             margin-right: 20px;
           }
-         
+          
         }
-        
+        .darkBtn {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          .text {
+            font-size: 14px;
+            color: var(--text-color);
+            margin: 0px 10px 0px 40px;
+          }
+        }
       }
     }
   }
