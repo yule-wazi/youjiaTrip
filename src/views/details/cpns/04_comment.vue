@@ -8,7 +8,7 @@
             <div class="title">{{ comment.scoreTitle }}</div>
             <div class="count">{{comment.totalCountStr}}条评论</div>
             <van-rate :model-value="comment.overall" 
-            readonly allow-half color="#FF9F46" size="15px"/>
+            readonly allow-half color="var(--primary-color)" size="15px"/>
           </div>
         </div>
         <div class="right">
@@ -54,7 +54,7 @@
     .overall {
       display: flex;
       justify-content: space-between;
-      background-color: #fff;
+      background-color: var(--bg-color);
       border-top: 0px;
       margin: 10px 0;
       .left {
@@ -74,7 +74,7 @@
           .count {
             margin-top: 3px;
             font-size: 12px;
-            color: #666;
+            color: var(--subText-color);
           }
         }
       }
@@ -85,7 +85,7 @@
           width: 45%;
         .desc {
           font-size: 12px;
-          color: #666;
+          color: var(--subText-color);
         }
       }
     }
@@ -117,7 +117,7 @@
           .time {
             margin-top: 3px;
             font-size: 12px;
-            color: #666;
+            color: var(--subText-color);
           }
         }
       }

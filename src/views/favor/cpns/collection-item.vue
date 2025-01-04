@@ -88,6 +88,7 @@ const discount = (item) => {
             padding: 2px 8px;
             border-radius: 10px;
             background-color: #E9E8E8;
+            color: #333;
             font-size: 10px;
             font-weight: 700;
           }
@@ -125,14 +126,14 @@ const discount = (item) => {
             }
             .text {
               font-size: 12px;
-              color: #999;
+              color:var(--subText-color);
               margin-left: 5px;
             }
           }
           .title {
             font-size: 18px;
             margin-top: 10px;
-            color: #333;
+            color: var(--text-color);
             text-align: justify;
             overflow: hidden;
             display: -webkit-box;
@@ -155,7 +156,7 @@ const discount = (item) => {
               font-size: 12px;
               text-decoration:line-through;
               margin: 22px 0 0 0;
-              color: #999;
+              color: var(--subText-color);
               font-family: TujiaFont-Number;
               .mark {
                 font-size: 12px;

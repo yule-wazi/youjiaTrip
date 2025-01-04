@@ -43,6 +43,7 @@ import { computed } from 'vue';
 
 <style lang="less" scoped>
   .facility {
+    background-color: var(--bg-color);
     .content {
       margin: 10px 0;
       background-color: var(--item-color);

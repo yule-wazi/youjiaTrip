@@ -7,7 +7,7 @@
       shape="round"
       @cancel="cancelClick"
       />
-      <van-tabs v-model:active="tabActive" :duration=0.3 color="#FF9F46">
+      <van-tabs v-model:active="tabActive" :duration=0.3 color="var(--primary-color)">
         <template v-for="(value, key, index) in citiesAll" :key="key">
           <van-tab :title="value.title" :name="key"></van-tab>
         </template>
@@ -48,19 +48,47 @@
 
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .local-position {
-    --van-tabs-line-height: 30px
+    --van-tabs-line-height: 30px;
+    --van-tab-text-color: var(--subText-color);
+    --van-tab-active-text-color:var(--text-color);
+    --van-tabs-nav-background:var(--bg-color);
+    .top {
+      :deep(.van-search) {
+        background-color: var(--bg-color);
+
+        .van-search__action {
+          color: var(--text-color);
+        }
+      }
+      position: relative;
+      z-index: 2;
+    }
+
+    .content {
+      height: calc(100vh - 84px);
+      overflow-y:auto;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      :deep(.van-index-anchor) {
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+      }
+      :deep(.van-index-bar) {
+        color:  var(--text-color);
+        .hotCity {
+          .city {
+            background-color: var(--item-color);
+          }
+        }
+        .van-cell {
+          background-color: var(--bg-color);
+          color: var(--text-color);
+        }
+      }
+    }
   }
 
-  .top {
-    position: relative;
-    z-index: 2;
-  }
-
-  .content {
-    height: calc(100vh - 84px);
-    overflow-y:auto;
-
-  }
+  
 </style>

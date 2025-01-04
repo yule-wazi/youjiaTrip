@@ -29,6 +29,8 @@ import { ref, watch } from 'vue';
 import { defineProps } from 'vue';
 import data from '@/assets/data/tab-bar-data';
 import { useRouter } from 'vue-router';
+import useNavMenu from '@/stores/modules/nav-menu';
+import { storeToRefs } from 'pinia';
 
 //接收父组件传入的参数
 const props = defineProps({
@@ -49,9 +51,13 @@ const routerTo = (item) => {
   },300)
 }
 // 深色模式
-const checked = ref(false)
+const navMenuStore = useNavMenu()
+const { isActive } = storeToRefs(navMenuStore)
+const checked = ref(isActive.value)
 // 监听模式转换
 watch(checked, () => {
+  //将每次变化都实时传给pinia管理
+  isActive.value = checked.value
   if(checked.value) {
     document.body.classList.add("dark-mode")
   } else {

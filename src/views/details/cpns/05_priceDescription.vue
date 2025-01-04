@@ -24,7 +24,7 @@
     }
     p {
       font-size: 12px;
-      color: #666;
+      color: var(--subText-color);
       text-align: justify;
       line-height: 15px;
     }

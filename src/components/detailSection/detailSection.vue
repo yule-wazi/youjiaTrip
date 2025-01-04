@@ -31,19 +31,16 @@
 <style lang="less" scoped>
   .section {
     padding: 12px 16px;
-    border-top: 10px solid #F1F3F5;
+    border-top: 10px solid var(--border-color);
     .header {
       height: 52px;
       border-bottom: 2px solid var(--border-color);
       h2 {
         font-size: 20px;
         font-weight: 600;
-        color: #333;
+        color: var(--text-color);
         line-height: 52px;
       }
-    }
-    .content {
-      
     }
     .footer {
       display: flex;

@@ -25,7 +25,7 @@
     <!-- 日期选择 -->
     <van-calendar v-model:show="showDate" 
       type="range"
-      color="#FF9F46"
+      color="var(--primary-color)"
       :formatter="formatter"
       @confirm="onConfirm" 
     />
@@ -130,7 +130,7 @@ import { computed, ref } from 'vue';
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .search-pos {
     --van-calendar-popup-height:100%;
     
@@ -176,14 +176,13 @@ import { computed, ref } from 'vue';
         font-size: 15px;
       }
     }
-
+    --van-calendar-background: var(--bg-color);
     .counte {
       display: flex;
       height: 44px;
       padding: 0 20px;
       align-items: center;
-      color:#999999;
-      
+      color: var(--subText-color);
       .priceCounte {
         flex: 1;
       }
@@ -200,7 +199,7 @@ import { computed, ref } from 'vue';
       height: 44px;
       padding: 0 20px;
       align-items: center;
-      color:#999999;
+      color: var(--subText-color);
     }
 
     .hotSuggest {

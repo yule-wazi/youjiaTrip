@@ -51,7 +51,7 @@
 </template>
 
 <script setup>
-import navBar from '@/components/nav-var/nav-bar.vue';
+import navBar from '@/components/nav-bar/nav-bar.vue';
 import useOrderList from '@/stores/modules/order';
 import footerText from '@/components/footer-text/footer-text.vue';
 import { storeToRefs } from 'pinia';
@@ -78,20 +78,22 @@ const getTimeformat = (str) => {
 <style lang="less" scoped>
   .order {
     .nav-bar {
-      border-bottom: 2px var(--border-color) solid;
       position: fixed;
       z-index: 9;
-      background-color: #fff;
+      border-bottom: 1px var(--border-color) solid;
+      background-color: var(--bg-color);
       .title {
         font-weight: 400;
       }
     }
     .nav-tab {
-      background-color: #F7F9FB;
+      --van-tab-text-color: var(--subText-color);
+      --van-tabs-nav-background:var(--bg-color);
+      background-color: var(--item-color);
       :deep(.van-tabs__wrap) {
         position: fixed;
         z-index: 5;
-        top: 47px;
+        top: 46px;
         left: 0;
         right: 0;
       }
@@ -101,7 +103,7 @@ const getTimeformat = (str) => {
         .item {
           height: 170px;
           padding: 0 10px;
-          background-color: #fff;
+          background-color: var(--bg-color);
           margin-bottom: 15px;
           border-radius: 10px;
           .header {
@@ -166,7 +168,7 @@ const getTimeformat = (str) => {
       }
     }
     .footer {
-      background-color: #F7F9FB;
+      background-color: var(--item-color);
     }
   }
 </style>

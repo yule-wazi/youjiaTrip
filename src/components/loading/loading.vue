@@ -28,7 +28,7 @@ import useMainStore from '@/stores/modules/main';
     .content {
       height: 150px;
       width: 150px;
-      background-color: #fff;
+      background-color: var(--bg-color);
       border-radius: 40px;
       img {
         width: 150px;

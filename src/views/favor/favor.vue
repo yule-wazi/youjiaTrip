@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import navBar from '@/components/nav-var/nav-bar.vue';
+import navBar from '@/components/nav-bar/nav-bar.vue';
 import footerText from '@/components/footer-text/footer-text.vue';
 import collectionItem from './cpns/collection-item.vue';
 import useCollection from '@/stores/modules/collection';
@@ -45,9 +45,7 @@ collectionStore.fetchCollectionAll()
 const { collectionList } = storeToRefs(collectionStore)
 // 监听currentIndex变化
 watch(currentIndex, () => {
-  collectionStore.fetchCollectionAll(currentIndex.value).then(() => {
-    console.log(collectionList.value)
-  })
+  collectionStore.fetchCollectionAll(currentIndex.value)
 })
 
 </script>
@@ -60,9 +58,9 @@ watch(currentIndex, () => {
       left: 0;
       right: 0;
       z-index: 9;
-      background-color: #fff;
+      background-color: var(--bg-color);
       border-bottom: 2px var(--border-color) solid;
-      box-shadow: 0 1px 10px#9999999a ;
+      box-shadow: 0 1px 10px#99999991 ;
       .center {
         .tab {
           display: flex;
@@ -87,7 +85,7 @@ watch(currentIndex, () => {
       }
       .right {
         font-size: 25px;
-        color: #fff;
+        color: var(--text-color);
       }
     }
   }

@@ -51,7 +51,7 @@ import { computed } from 'vue';
           margin-left: 2px;
         }
         .text {
-          color: #999;
+          color: var(--subText-color);
         }
       }
       .start {
@@ -66,7 +66,7 @@ import { computed } from 'vue';
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color:#999;
+      color: var(--subText-color);
       border-radius: 0px 6px 6px 0px;
     }
 

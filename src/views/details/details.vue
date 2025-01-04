@@ -2,7 +2,10 @@
   <div class="Details" ref="detailRef">
     <nav-bar/>
     <div class="tab" >
-      <van-tabs  v-model:active="active" v-if="isShowTab" @click-tab="onClickTab()">
+      <van-tabs  v-model:active="active" 
+      v-if="isShowTab" 
+      @click-tab="onClickTab()" 
+      >
         <template v-for="(item, index) in ['概览', '设施', '评论']">
           <van-tab :title="item" />
         </template>
@@ -43,7 +46,7 @@ import comment from './cpns/04_comment.vue'
 import priceDescription from './cpns/05_priceDescription.vue'
 import useScroll from '@/hooks/useScroll';
 import { computed, ref, watch } from 'vue';
-import navBar from '@/components/nav-var/nav-bar.vue';
+import navBar from '@/components/nav-bar/nav-bar.vue';
   
   const detailsStore = useDetails()
   const {mainPart, houseId} = storeToRefs(detailsStore)
@@ -94,6 +97,10 @@ import navBar from '@/components/nav-var/nav-bar.vue';
   .Details {
     background-color: var(--bg-color);
     .tab {
+      --van-tabs-nav-background:var(--item-color);
+      --van-tab-text-color:var(--subText-color);
+      --van-tab-active-text-color:var(--text-color);
+      --van-tabs-bottom-bar-color:var(--primary-color);
       position: fixed;
       top: 0;
       left: 0;

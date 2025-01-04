@@ -1,6 +1,7 @@
 .dark-mode {
   --bg-color: #282828;
   --text-color: #fff;
+  --subText-color: #999;
   --border-color: #c0c6c648;
   --item-color: #3C3C3C;
 }

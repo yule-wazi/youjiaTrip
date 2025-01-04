@@ -46,6 +46,7 @@
 <style lang="less" scoped>
   .infos {
     padding: 12px 16px;
+    background-color: var(--bg-color);
     .houseName {
       font-weight: 600;
       font-size: 20px;
