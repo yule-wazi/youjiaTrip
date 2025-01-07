@@ -1,4 +1,4 @@
-.dark-mode {
+:root.dark-mode {
   --bg-color: #282828;
   --text-color: #fff;
   --subText-color: #999;

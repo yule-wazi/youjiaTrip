@@ -44,7 +44,18 @@ const router = createRouter({
         hideTabBar: true
       }
     },
+    {
+      path: '/login',
+      component: () => import('@/views/login/login.vue'),
+      meta: {
+        hideTabBar: true
+      }
+    }
   ]
 })
-
+ router.beforeEach((to,from) => {
+    if((to.path == '/favor' || to.path == '/order' || to.path == '/message')&& to.path !== '/login' && !localStorage.getItem("token")) {
+      return '/login'
+    } 
+ })
 export default router

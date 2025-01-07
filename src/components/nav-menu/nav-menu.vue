@@ -13,6 +13,10 @@
                 <div class="text">{{ item.context }}</div>
               </li>
             </template>
+            <li class="item" @click="logOut">
+              <div class="icon"><span class="iconfont">&#xe67f;</span></div>
+              <div class="text">退出登录</div>
+            </li>
           </ul>
           <div class="darkBtn">
             <div class="text">深色模式</div>
@@ -44,10 +48,12 @@ const props = defineProps({
 const isShow = ref(props.show)
 // 路由
 const route = useRouter()
+//关闭菜单&&跳转
 const routerTo = (item) => {
   isShow.value = false
   setTimeout(() => {
-    route.push(item.path)
+    const path = item.path ? item.path : item
+    route.push(path)
   },300)
 }
 // 深色模式
@@ -59,11 +65,16 @@ watch(checked, () => {
   //将每次变化都实时传给pinia管理
   isActive.value = checked.value
   if(checked.value) {
-    document.body.classList.add("dark-mode")
+    document.documentElement.classList.add("dark-mode")
   } else {
-    document.body.classList.remove("dark-mode")
+    document.documentElement.classList.remove("dark-mode")
   }
 })
+// 退出登录 
+const logOut = () => {
+  localStorage.removeItem('token')
+  routerTo('/home')
+}
 </script>
 
 <style lang="less" scoped>
@@ -122,6 +133,10 @@ watch(checked, () => {
           }
           .icon {
             margin-right: 20px;
+            color: var(--text-color);
+            .iconfint {
+              color: var(--text-color);
+            }
           }
           
         }
