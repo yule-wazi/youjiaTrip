@@ -1,3 +1,6 @@
+# youjiaTrip
+一个旅游住宿预订软件页面
+
 # trip
 
 This template should help get you started developing with Vue 3 in Vite.
