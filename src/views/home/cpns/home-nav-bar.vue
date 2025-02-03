@@ -8,6 +8,8 @@
         <template #center>
           <div class="title">友家旅途</div>
         </template>
+        <template #right>
+        </template>
       </nav-bar>
     </div>
     <div class="banner">

@@ -20,7 +20,7 @@
           </ul>
           <div class="darkBtn">
             <div class="text">深色模式</div>
-            <van-switch v-model="checked" />
+            <van-switch v-model="isActive" />
           </div>
         </div>
       </div>
@@ -59,12 +59,9 @@ const routerTo = (item) => {
 // 深色模式
 const navMenuStore = useNavMenu()
 const { isActive } = storeToRefs(navMenuStore)
-const checked = ref(isActive.value)
 // 监听模式转换
-watch(checked, () => {
-  //将每次变化都实时传给pinia管理
-  isActive.value = checked.value
-  if(checked.value) {
+watch(isActive, () => {
+  if(isActive.value) {
     document.documentElement.classList.add("dark-mode")
   } else {
     document.documentElement.classList.remove("dark-mode")
